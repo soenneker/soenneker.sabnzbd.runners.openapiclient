@@ -30,6 +30,6 @@
         <PackageReference Include="Soenneker.Kiota.Util" Version="4.0.86" />
         <PackageReference Include="Soenneker.Managers.Runners" Version="4.0.2378" />
         <PackageReference Include="Soenneker.OpenApi.Fixer" Version="4.0.306" />
-        <PackageReference Include="Soenneker.Utils.HttpClientCache" Version="4.0.2026" />
+        <PackageReference Include="Soenneker.Utils.HttpClientCache" Version="4.0.2027" />
     </ItemGroup>
 </Project>
