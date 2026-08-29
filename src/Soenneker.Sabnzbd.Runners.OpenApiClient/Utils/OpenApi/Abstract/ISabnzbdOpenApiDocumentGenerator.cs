@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi.Abstract;
 
+/// <summary>
+/// Generates the normalized SABnzbd OpenAPI document consumed by client generation.
+/// </summary>
 public interface ISabnzbdOpenApiDocumentGenerator
 {
     /// <summary>
