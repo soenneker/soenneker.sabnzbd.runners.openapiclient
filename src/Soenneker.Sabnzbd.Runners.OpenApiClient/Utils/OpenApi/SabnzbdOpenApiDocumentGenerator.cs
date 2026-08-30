@@ -18,7 +18,6 @@ using System.Threading.Tasks;
 
 namespace Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi;
 
-/// <inheritdoc cref="ISabnzbdOpenApiDocumentGenerator"/>
 public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGenerator
 {
     public const string DefaultDocumentationUrl = "https://sabnzbd.org/wiki/configuration/5.0/api";
