@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi.Abstract;
 using Soenneker.Tests.HostedUnit;
@@ -18,7 +19,7 @@ public sealed class SabnzbdOpenApiClientRunnerTests : HostedUnitTest
     }
 
     [Test]
-    public async Task Documentation_html_generates_openapi_document()
+    public async Task Documentation_html_generates_openapi_document(CancellationToken cancellationToken)
     {
         const string html = """
                             <div class="wiki-content">
@@ -38,7 +39,7 @@ public sealed class SabnzbdOpenApiClientRunnerTests : HostedUnitTest
                             </div>
                             """;
 
-        string json = await _generator.GenerateFromHtml(html, "https://sabnzbd.org/wiki/configuration/5.0/api");
+        string json = await _generator.GenerateFromHtml(html, "https://sabnzbd.org/wiki/configuration/5.0/api", cancellationToken: cancellationToken);
         using JsonDocument document = JsonDocument.Parse(json);
 
         JsonElement root = document.RootElement;
