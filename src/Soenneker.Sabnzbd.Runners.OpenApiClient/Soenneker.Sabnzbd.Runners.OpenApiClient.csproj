@@ -28,8 +28,8 @@
         <PackageReference Include="Soenneker.AngleSharp.Parser" Version="4.0.62" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.11" />
         <PackageReference Include="Soenneker.Kiota.Util" Version="4.0.101" />
-        <PackageReference Include="Soenneker.Managers.Runners" Version="4.0.2431" />
-        <PackageReference Include="Soenneker.OpenApi.Fixer" Version="4.0.321" />
-        <PackageReference Include="Soenneker.Utils.HttpClientCache" Version="4.0.2051" />
+        <PackageReference Include="Soenneker.Managers.Runners" Version="4.0.2432" />
+        <PackageReference Include="Soenneker.OpenApi.Fixer" Version="4.0.322" />
+        <PackageReference Include="Soenneker.Utils.HttpClientCache" Version="4.0.2052" />
     </ItemGroup>
 </Project>
