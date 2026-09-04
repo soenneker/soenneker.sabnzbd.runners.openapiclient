@@ -463,6 +463,7 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
     private static SortedSet<string> CollectModes(IEnumerable<string> requestExamples, IEnumerable<FunctionDescriptor> functions)
     {
         SortedSet<string> result = new(StringComparer.Ordinal);
+        IReadOnlyCollection<FunctionDescriptor> functionCollection = functions as IReadOnlyCollection<FunctionDescriptor> ?? functions.ToArray();
 
         foreach (string example in requestExamples)
         {
@@ -471,14 +472,17 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
                 result.Add(mode);
         }
 
-        foreach (FunctionDescriptor function in functions)
+        foreach (FunctionDescriptor function in functionCollection)
         {
             if (function.Mode != null && IsMode(function.Mode))
                 result.Add(function.Mode);
         }
 
-        foreach (FunctionDescriptor function in functions.Where(item => item.Mode == null && item.Function.Contains('/')))
+        foreach (FunctionDescriptor function in functionCollection)
         {
+            if (function.Mode != null || !function.Function.Contains('/'))
+                continue;
+
             string[] aliases = function.Function.Split('/', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
                                                 .Select(value => value.Split('(', 2)[0].Trim())
                                                 .Where(IsMode)
