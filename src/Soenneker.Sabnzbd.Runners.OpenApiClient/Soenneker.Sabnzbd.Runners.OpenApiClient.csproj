@@ -28,7 +28,7 @@
         <PackageReference Include="Soenneker.AngleSharp.Parser" Version="4.0.86" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
         <PackageReference Include="Soenneker.Kiota.Util" Version="4.0.132" />
-        <PackageReference Include="Soenneker.Managers.Runners" Version="4.0.2541" />
+        <PackageReference Include="Soenneker.Managers.Runners" Version="4.0.2543" />
         <PackageReference Include="Soenneker.OpenApi.Fixer" Version="4.0.361" />
     </ItemGroup>
 </Project>
