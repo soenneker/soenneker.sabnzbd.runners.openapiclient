@@ -1,3 +1,4 @@
+using Soenneker.Utils.File.Abstract;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
 using Microsoft.Extensions.Configuration;
@@ -33,9 +34,12 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
     private readonly IAngleSharpParser _angleSharpParser;
     private readonly IHttpClientCache _httpClientCache;
 
+    private readonly IFileUtil _fileUtil;
+
     public SabnzbdOpenApiDocumentGenerator(IConfiguration configuration, ILogger<SabnzbdOpenApiDocumentGenerator> logger,
-        IAngleSharpParser angleSharpParser, IHttpClientCache httpClientCache)
+        IAngleSharpParser angleSharpParser, IHttpClientCache httpClientCache, IFileUtil fileUtil)
     {
+        _fileUtil = fileUtil;
         _configuration = configuration;
         _logger = logger;
         _angleSharpParser = angleSharpParser;
@@ -57,7 +61,7 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
         string html = await response.Content.ReadAsStringAsync(cancellationToken);
         string openApiJson = await GenerateFromHtml(html, documentationUrl, cancellationToken);
 
-        await File.WriteAllTextAsync(destinationFilePath, openApiJson, cancellationToken);
+        await _fileUtil.Write(destinationFilePath, openApiJson, cancellationToken: cancellationToken);
 
         _logger.LogInformation("Generated SABnzbd OpenAPI document at {DestinationFilePath}", destinationFilePath);
     }
