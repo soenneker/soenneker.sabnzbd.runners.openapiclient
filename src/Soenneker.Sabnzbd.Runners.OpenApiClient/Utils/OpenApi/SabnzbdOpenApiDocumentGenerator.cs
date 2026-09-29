@@ -114,7 +114,7 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
             JsonObject parameter = BuildParameter(parameterName, modes, parameterDescriptions.GetValueOrDefault(parameterName));
             string componentName = ToComponentName(parameterName);
             parameters[componentName] = parameter;
-            operationParameters.Add(new JsonObject { ["$ref"] = $"#/components/parameters/{componentName}" });
+            operationParameters.Add((System.Text.Json.Nodes.JsonNode?)new JsonObject { ["$ref"] = $"#/components/parameters/{componentName}" });
         }
 
         JsonObject responses = new()
@@ -613,7 +613,7 @@ public sealed class SabnzbdOpenApiDocumentGenerator : ISabnzbdOpenApiDocumentGen
                 item["mode"] = function.Mode;
             if (!string.IsNullOrWhiteSpace(function.Name))
                 item["name"] = function.Name;
-            result.Add(item);
+            result.Add((System.Text.Json.Nodes.JsonNode?)item);
         }
         return result;
     }
