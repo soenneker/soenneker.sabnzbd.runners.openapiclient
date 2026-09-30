@@ -19,7 +19,7 @@ public sealed class SabnzbdOpenApiClientRunnerTests : HostedUnitTest
     }
 
     [Test]
-    public async Task Documentation_html_generates_openapi_document(CancellationToken cancellationToken)
+    public async ValueTask Documentation_html_generates_openapi_document(CancellationToken cancellationToken)
     {
         const string html = """
                             <div class="wiki-content">
