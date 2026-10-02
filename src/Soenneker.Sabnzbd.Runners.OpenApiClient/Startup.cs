@@ -8,6 +8,7 @@ using Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi;
 using Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi.Abstract;
 using Soenneker.AngleSharp.Parser.Registrars;
 using Soenneker.Utils.HttpClientCache.Registrar;
+using Soenneker.Utils.File.Registrars;
 
 namespace Soenneker.Sabnzbd.Runners.OpenApiClient;
 
@@ -38,6 +39,7 @@ public static class Startup
                 .AddSingleton<ISabnzbdOpenApiDocumentGenerator, SabnzbdOpenApiDocumentGenerator>()
                 .AddAngleSharpParserAsSingleton()
                 .AddHttpClientCacheAsSingleton()
+                .AddFileUtilAsSingleton()
                 .AddRunnersManagerAsSingleton()
                 .AddOpenApiFixerAsSingleton()
                 .AddKiotaUtilAsSingleton();

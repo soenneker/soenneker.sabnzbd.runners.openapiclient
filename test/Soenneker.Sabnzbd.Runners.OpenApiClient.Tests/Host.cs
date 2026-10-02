@@ -8,6 +8,7 @@ using Soenneker.AngleSharp.Parser.Registrars;
 using Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi;
 using Soenneker.Sabnzbd.Runners.OpenApiClient.Utils.OpenApi.Abstract;
 using Soenneker.Utils.HttpClientCache.Registrar;
+using Soenneker.Utils.File.Registrars;
 
 namespace Soenneker.Sabnzbd.Runners.OpenApiClient.Tests;
 
@@ -31,6 +32,7 @@ public sealed class Host : UnitTestHost
         services.AddSingleton(config);
         services.AddAngleSharpParserAsSingleton()
                 .AddHttpClientCacheAsSingleton()
+                .AddFileUtilAsSingleton()
                 .AddSingleton<ISabnzbdOpenApiDocumentGenerator, SabnzbdOpenApiDocumentGenerator>();
     }
 }
