@@ -33,7 +33,7 @@
         <PackageReference Include="Soenneker.OpenApi.Fixer" Version="4.0.395" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Soenneker.Enums.DeployEnvironment" Version="4.0.259" />
+        <PackageReference Include="Soenneker.Enums.DeployEnvironment" Version="4.0.260" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Soenneker.Extensions.ValueTask" Version="4.0.133" />
