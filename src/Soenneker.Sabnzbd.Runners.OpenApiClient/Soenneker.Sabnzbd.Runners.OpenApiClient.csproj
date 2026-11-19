@@ -29,7 +29,7 @@
         <PackageReference Include="Soenneker.AngleSharp.Parser" Version="11.0.139" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="11.0.0" />
         <PackageReference Include="Soenneker.Kiota.Util" Version="11.0.197" />
-        <PackageReference Include="Soenneker.Managers.Runners" Version="11.0.2743" />
-        <PackageReference Include="Soenneker.OpenApi.Fixer" Version="11.0.448" />
+        <PackageReference Include="Soenneker.Managers.Runners" Version="11.0.2744" />
+        <PackageReference Include="Soenneker.OpenApi.Fixer" Version="11.0.449" />
     </ItemGroup>
 </Project>
